@@ -1,0 +1,27 @@
+{
+  "name": "node-store-baltaio",
+  "version": "1.0.0",
+  "description": "API NodeJs Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoscosta17/node-store-baltaio.git"
+  },
+  "keywords": [
+    "nodejs API store"
+  ],
+  "author": "Bruno Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunoscosta17/node-store-baltaio/issues"
+  },
+  "homepage": "https://github.com/brunoscosta17/node-store-baltaio#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "http": "0.0.0"
+  }
+}
