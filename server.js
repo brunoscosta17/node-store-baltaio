@@ -19,6 +19,7 @@ const route = router.get('/', (req, res, next) => {
 });
 
 app.use('/', route);
+
 server.listen(port);
 console.log("API running on port", port);
 
