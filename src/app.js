@@ -8,7 +8,10 @@ const app = express();
 const router = express.Router();
 
 // Conecta ao banco
-mongoose.connect('mongodb://bruno:mongo471577@ds133556.mlab.com:33556/ndstr_2')
+mongoose.connect('mongodb://bruno:mongo471577@ds133556.mlab.com:33556/ndstr_2');
+
+//Carrega os Models
+const Product = require('./models/product-model');
 
 //Carrega as Rotas
 const indexRoute = require('./routes/index-route');
