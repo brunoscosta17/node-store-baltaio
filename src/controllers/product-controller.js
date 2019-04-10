@@ -8,8 +8,8 @@ exports.get = (req, res, next) => {
         .find({
             active: true
         }, 'title price slug')
-        .then( data => {
-            res.status(200).send({data});
+        .then(data => {
+            res.status(200).send({ data });
         }).catch(e => {
             res.status(400).send({
                 message: 'Erro ao buscar o produto!',
@@ -24,7 +24,7 @@ exports.getBySlug = (req, res, next) => {
             slug: req.params.slug,
             active: true
         }, 'title description price slug tags')
-        .then( data => {
+        .then(data => {
             res.status(200).send(data);
         }).catch(e => {
             res.status(400).send({
@@ -37,7 +37,7 @@ exports.getBySlug = (req, res, next) => {
 exports.getById = (req, res, next) => {
     Product
         .findById(req.params.id)
-        .then( data => {
+        .then(data => {
             res.status(200).send(data);
         }).catch(e => {
             res.status(400).send({
@@ -53,8 +53,8 @@ exports.getByTag = (req, res, next) => {
             tags: req.params.tag,
             active: true
         }, 'title description price slug tags')
-        .then( data => {
-            res.status(200).send({data});
+        .then(data => {
+            res.status(200).send({ data });
         }).catch(e => {
             res.status(400).send({
                 message: 'Erro ao buscar o produto!',
@@ -66,9 +66,9 @@ exports.getByTag = (req, res, next) => {
 exports.post = (req, res, next) => {
     var product = new Product(req.body);
     product.save()
-        .then( data => {
+        .then(data => {
             res.status(201)
-                .send({data});
+                .send({ data });
         }).catch(e => {
             res.status(400).send({
                 message: 'Erro ao buscar produto!',
@@ -98,5 +98,17 @@ exports.put = (req, res, next) => {
 };
 
 exports.delete = (req, res, next) => {
-    res.status(200).send(req.body);
+    Product
+        .findOneAndRemove(req.body.id)
+        .then(data => {
+            res.status(200).send({
+                message: 'Produto removido com sucesso!',
+                data: data
+            });
+        }).catch(e => {
+            res.status(400).send({
+                message: 'Falha ao remover o produto!',
+                data: e
+            });
+        })
 };
