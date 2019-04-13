@@ -12,6 +12,7 @@ mongoose.connect('mongodb://bruno:mongo471577@ds133556.mlab.com:33556/ndstr_2');
 
 //Carrega os Models
 const Product = require('./models/product-model');
+const Customer = require('./models/customer-model');
 
 //Carrega as Rotas
 const indexRoute = require('./routes/index-route');
