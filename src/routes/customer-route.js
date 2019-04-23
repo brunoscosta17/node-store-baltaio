@@ -5,6 +5,7 @@ const router = express.Router();
 const controller = require('../controllers/customer-controller');
 
 router.get('/', controller.get);
+router.post('/authenticate', controller.authenticate);
 router.post('/', controller.post);
 
 module.exports = router;
