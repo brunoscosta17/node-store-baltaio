@@ -23,7 +23,7 @@ exports.post = async (req, res, next) => {
         const data = await authService.decodeToken(token);
 
         await repository.create({
-            customer: data.id,
+            customer: data.customer,
             number: guid.raw().substring(0, 6),
             items: req.body.items
         });
